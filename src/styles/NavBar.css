@@ -1,0 +1,25 @@
+.navBar {
+    width: 20%;
+    background-color: #007bff;
+    height: 100%;
+    padding: 2rem;
+}
+
+.navBar ul {
+    list-style-type: none;
+    margin-top: 30px;
+}
+.navBar img {
+    cursor: pointer;
+}
+.navBar img:hover {
+    background-color: #3797fe;
+    border-radius: 50%;
+}
+.navBar li {
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
