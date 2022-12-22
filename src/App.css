@@ -1,11 +1,11 @@
 .App {
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
+  background-color: #f8f9fa;
 }
 .todoContainer {
   height: 100vh;
   display: flex;
-  background-color: #f8f9fa;
 }
 .todoBody {
   padding: 50px;
