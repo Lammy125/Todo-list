@@ -1,26 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import TodoItem from "./TodoItem";
 
-const TodoList = () => {
-  const todos = [
-    {
-      id: 1,
-      text: "Have Fun",
-      status: false,
-    },
-    {
-      id: 2,
-      text: "Study React",
-      status: true,
-    },
-  ];
+const TodoList = ({todos}) => {
+  
   return (
     <div className="listTop">
       <div className="todoList">
         {todos?.map((item) => (
-          <div className="todoItems">
-            <input type="checkbox" checked={item.status} className="inputItem" />
-            {item.text}
-          </div>
+          <TodoItem item = {item}/>
         ))}
       </div>
     </div>
