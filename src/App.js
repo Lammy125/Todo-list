@@ -1,11 +1,10 @@
-
-import './App.css';
-import TodoContainer from './components/TodoContainer';
+import "./App.css";
+import AllRoutes from "./routes/AllRoutes";
 
 function App() {
   return (
     <div className="App">
-      <TodoContainer/>
+      <AllRoutes />
     </div>
   );
 }
