@@ -29,7 +29,6 @@ const Register = () => {
             console.log(values);
           }}
         >
-          {" "}
           {({
             values,
             errors,
