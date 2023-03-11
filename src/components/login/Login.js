@@ -6,11 +6,10 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
   const navigate = useNavigate();
+
   const initialValues = {
-    first_name: "",
-    last_name: "",
     email: "",
     password: "",
   };
@@ -19,8 +18,6 @@ const Register = () => {
       .string()
       .required("Email address is required")
       .email("Enter a valid email address"),
-    first_name: yup.string().required("First name is required"),
-    last_name: yup.string().required("Last name is required"),
     password: yup
       .string()
       .min(8, "Password must be 8 characters long")
@@ -38,11 +35,10 @@ const Register = () => {
           validationSchema={validationSchema}
           onSubmit={async (values, { setSubmitting }) => {
             console.log(values);
-
             var config = {
               method: "post",
 
-              url: "https://authentication-authorization.onrender.com/register",
+              url: "https://authentication-authorization.onrender.com/login",
               headers: {
                 "Content-Type": "application/json",
               },
@@ -52,7 +48,7 @@ const Register = () => {
             axios(config)
               .then(function (response) {
                 console.log(JSON.stringify(response.data));
-                toast.success("Register successfully");
+                toast.success("Login successfully");
                 localStorage.setItem("token", response.data.token);
                 navigate("/");
               })
@@ -73,42 +69,18 @@ const Register = () => {
             setFieldTouched,
             isSubmitting,
           }) => (
-            <form className="formRegister" onSubmit={handleSubmit}>
+            <form className="formLogin" onSubmit={handleSubmit}>
               <div>
-                <h1>Sign up</h1>
+                <h1>Sign in</h1>
                 <p>Fill in your details</p>
-              </div>
-              <div className="details">
-                <label className="info">First Name</label>
-                <input
-                  type="text"
-                  value={values.first_name}
-                  placeholder="First Name"
-                  name="first_name"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                <span>{touched.first_name && errors.first_name}</span>
-              </div>
-              <div className="details">
-                <label className="info">Last Name</label>
-                <input
-                  type="text"
-                  value={values.last_name}
-                  placeholder="Last Name"
-                  name="last_name"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                <span>{touched.last_name && errors.last_name}</span>
               </div>
               <div className="details">
                 <label className="infoEmail">Email</label>
                 <input
                   type="email"
-                  value={values.email}
                   name="email"
                   placeholder="Email address"
+                  value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
@@ -118,16 +90,16 @@ const Register = () => {
                 <label className="infoPassword">Password</label>
                 <input
                   type="password"
-                  value={values.password}
                   name="password"
                   placeholder="********"
+                  value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
                 <span>{touched.password && errors.password}</span>
               </div>
               <button className="btnDetails" type="submit">
-                Create Account
+                Log in
               </button>
             </form>
           )}
@@ -137,4 +109,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

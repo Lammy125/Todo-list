@@ -23,7 +23,7 @@
 }
 .todoHeader h1 {
   color: #037bff;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 45px;
   text-decoration: underline;
 }
@@ -87,10 +87,104 @@
   font-size: 25px;
   color: rgb(98, 97, 97);
 }
-input [type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  height: 60px;
-  width: 60px;
+
+.formRegister h1 {
+  color: #037bff;
+  font-weight: 600;
+  font-size: 45px;
+}
+
+.formRegister p {
+  font-weight: 600;
+}
+
+.formRegister label {
+  display: block;
+}
+
+.formRegister input {
+  background-color: white;
+  width: 400px;
+  height: 30px;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 1px 2px 5px #DCDCDC;
+  border: none;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.formRegister input:focus {
+  outline-color: white;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  padding: 5px;
+}
+
+.btnDetails {
+  background-color: #007bff;
+  width: 420px;
+  align-items: center;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 200;
+  margin-top: 10px;
+}
+
+.btnDetails:hover {
   cursor: pointer;
+  background-color: #0059ff;
+}
+
+.info {
+  margin-right: 342px;
+}
+
+.infoEmail {
+  margin-right: 380px;
+}
+
+.infoPassword {
+  margin-right: 350px;
+}
+
+.formLogin h1 {
+  color: #037bff;
+  font-weight: 600;
+  font-size: 45px;
+}
+
+.formLogin p {
+  font-weight: 600;
+}
+
+.formLogin input {
+  background-color: white;
+  width: 400px;
+  height: 30px;
+  border-radius: 3px;
+  box-shadow: 1px 2px 5px #DCDCDC;
+  border: none;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.formLogin input:focus {
+  outline-color: white;
+}
+
+span {
+  background-color: rgb(252, 107, 107);
+  border-radius: 1px;
+  border: none;
+  font-size: 15px;
 }
