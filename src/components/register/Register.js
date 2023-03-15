@@ -28,6 +28,9 @@ const Register = () => {
       .matches(/[a-z]/, "Password requires a lowercase letter")
       .matches(/[A-Z]/, "Password requires an uppercase letter")
       .matches(/[^\w]/, "Password requires a symbol"),
+    confirm: yup
+      .string()
+      .oneOf([yup.ref("pass"), null], 'Must match "password" field value'),
   });
   return (
     <div className="todoContainer">
@@ -120,6 +123,18 @@ const Register = () => {
                   type="password"
                   value={values.password}
                   name="password"
+                  placeholder="********"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                <span>{touched.password && errors.password}</span>
+              </div>
+              <div className="details">
+                <label className="infoPasswordConfirm">Confirm Password</label>
+                <input
+                  type="password"
+                  value={values.confirm}
+                  name="confirm"
                   placeholder="********"
                   onChange={handleChange}
                   onBlur={handleBlur}
